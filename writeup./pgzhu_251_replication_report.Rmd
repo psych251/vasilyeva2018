@@ -30,7 +30,7 @@ There appears to an OSF link on the paper, but it is broken. A further search sh
 
 Project repository (on Github): https://github.com/psych251/vasilyeva2018.git
 
-Original paper (as hosted in your repo): https://onlinelibrary.wiley.com/doi/10.1111/cogs.12605 
+Original paper (as hosted in your repo): https://github.com/psych251/vasilyeva2018/blob/main/original_paper/Vasilyeva_Blanchard_Lombrozo_2018.pdf or https://onlinelibrary.wiley.com/doi/10.1111/cogs.12605 
 
 ## Methods
 
