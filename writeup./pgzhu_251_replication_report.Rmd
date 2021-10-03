@@ -26,6 +26,8 @@ The study will be run on Prolific with adults in the United States. The task is 
 
 There appears to an OSF link on the paper, but it is broken. A further search shows that the data file for this experiment on OSF is empty - there are no open materials from this experiment online. I will have to contact the researchers to request more information about administration of the task, clarification on the exact study design, the stimuli and question wording and coding (beyond what is written in the paper, which spells out most of the wording already), and clarification on their analyses. Obtaining a near exact replication may be hard if obtaining these materials is difficult.
 
+I hope to also conduct additional exploratory analyses (TBD) to push beyond the very simple analyses used for this experiment in the paper.
+
 ### Links
 
 Project repository (on Github): https://github.com/psych251/vasilyeva2018.git
