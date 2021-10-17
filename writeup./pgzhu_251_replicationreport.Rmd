@@ -1,0 +1,164 @@
+---
+title: "Replication of Experiment 1 in Stable Causal Relationships Are Better Causal Relationships by Vasilyeva, Blanchard, & Lombrozo (2018, Cognitive Science)"
+author: "Peter Zhu (pgzhu@stanford.edu)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+---
+
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+
+##Introduction
+
+Vasilyeva, Blanchard, & Lombrozo (2018, Cognitive Science) investigated people's evaluations of causal relationships based on *stability* - that is, whether a causal relationship holds across possible moderating variables. Across three experiments, Vasilyeva et al. demonstrated that adults were more likely to endorse *stable* causal claims over *unstable* causal claims (i.e. that don't hold across a potential moderator). Particularly in Experiment 1 (the target of this replication), adults not endorsed *stable* causal claims over *unstable* causal claims when presented with covariation data from a hypothetical science study.
+
+One key interest of mine is childrens' developing causal reasoning - how do children reason about causal systems and explanations? A key part of this research program will also be characterizing the adult state and asking how adults reason about the same phenomena and questions. Replicating an experiment from this paper would help me better understand the design and analyses associated with asking adults about their judgments centered around important aspects of a causal relationship. This work could extend into further replications (i.e. of the other experiments in this paper) and/or further questions (developmental or otherwise) that would be very relevant to my research interests.
+
+I plan on replicating the result from Experiment 1 - that adults were more likely to endorse a causal relationship when the relationship was non-moderated vs. moderated. I chose this result because they manipulated many possible factors that might play into adults intuitions about causal relationships (i.e. varying the DV questions), and it was the first result that laid out the phenomenon that later experiments could build on top of. Its analysis was a 2 x 2 x 2 mixed ANOVA, and a separate 2 x 2 mixed ANOVA for a separate DV (counterfactual ratings). 
+
+### Procedure and Anticipated Challenges
+
+The study will be run on Prolific with adults in the United States. The task is simple - participants will read blocks of text describing a scientists' investigation on a novel alien population, then be given covariation data from the scientists' study. There are no other materials other than the text from the questions and scenario. I will obtain the exact stimuli (scenario and question wording) from the researchers, build a Qualtrics survey for the task, and analyze the data using R. For this, I will need funds to run participants on Prolific. One key concern about this experiment in particular is the exclusion rate - the authors of the original paper excluded a lot their tested participants. I will keep an eye on this exclusion rate and discuss with the TAs and Mike to see if it constitutes a bigger issue for carrying out the project.
+
+There appears to an OSF link on the paper, but it is broken. A further search shows that the data file for this experiment on OSF is empty - there are no open materials from this experiment online. I will have to contact the researchers to request more information about administration of the task, clarification on the exact study design, the stimuli and question wording and coding (beyond what is written in the paper, which spells out most of the wording already), and clarification on their analyses. Obtaining a near exact replication may be hard if obtaining these materials is difficult.
+
+### Links
+
+Project repository (on Github): https://github.com/psych251/vasilyeva2018.git
+
+Original paper (as hosted in your repo): https://github.com/psych251/vasilyeva2018/blob/main/original_paper/Vasilyeva_Blanchard_Lombrozo_2018.pdf or https://onlinelibrary.wiley.com/doi/10.1111/cogs.12605  
+
+## Methods
+
+### Power Analysis
+
+TBD
+
+### Planned Sample
+
+Power analyses have yet to take place to determine participants in each condition. Participants will be limited to Prolific users in the United States, and failure on any of the comprehension questions in the survey will result in exclusion from analysis. Otherwise, there are no other preselection rules or other restrictions on the sample.
+
+### Materials, Design, and Procedure
+
+From the article: 
+
+"Participants first completed a short training to ensure that they could interpret covariation tables and were then placed in the role of a scientist (zoologist, botanist, geologist, or ornithologist) studying several natural kinds on a fictional planet. Table 1 shows the four kinds — zelmos, drols, grimonds, and yuyus — each associated with a triad of variables (putative cause, effect, and moderator). We illustrate the procedure with zelmos, but the structure was matched across cases. 
+
+The scientist was described as investigating the hypothesis that eating yona plants is causally related to developing sore antennas. Participants were told that to test the hypothesis, the scientist performed an experiment, selecting a random sample of 200 zelmos and randomly assigning them to two equal groups that ate a diet either containing or not containing yonas. Participants saw the results of the experiment in the form of a 2 x 2 covariation table cross-classifying zelmos based on whether they ate yonas or not, and whether they developed sore antennas or not (see Fig. 1a). The numbers in the table were selected to provide support for a relationship with causal strength equal to a $\Delta$P of about .4 (range 0.39–0.42).
+
+The scientist then decided to conduct a second experiment with a new, larger sample of 400 zelmos, again randomly assigning zelmos to one of the two diets. But this time the scientist discovered after the experiment that due to a miscommunication between research assistants, half of the zelmos were given salty water, and the other half were given fresh water. The two values of this potentially moderating variable were always said to occur normally on the planet; for example, in the wild, zelmos drink either fresh or salty water, depending on what’s available. (This moderating variable played the role of a “background circumstance” relative to which the cause-effect relationship (e.g., eating yonas --> sore antennas was stable or unstable.) Luckily for the scientist, the moderator and cause variables varied orthogonally. Participants were told that “to see whether drinking salty water made a difference to the effects of yonas on sore antennas, you decide to look at the results of the experiment within each of these two groups.” This time participants were presented with the data split into two tables, one for the salty water subgroup, and one for the fresh water subgroup, each table cross-classifying zelmos in terms of diet and antenna soreness (see Fig. 1). 
+
+Depending on condition, the split tables indicated a relationship that was either moderated or not moderated. In the moderated cases (illustrated in Fig. 1c), in one subgroup (salty water) the relationship between eating yonas and sore antennas was very strong ($\Delta$P = .81–0.86), while in the other subgroup (fresh water), the relationship disappeared ($\Delta$P = .00–0.01). In the non-moderated cases (Fig. 1b), each of the split tables corresponded to relationships with a $\Delta$P comparable to the ~0.40 from the original, unsplit table. Importantly, the average strength of the relationship across the two split tables was the same in the moderated and non-moderated conditions (or differed by no more than 0.05 $\Delta$P units, always in the direction working against our hypothesis3), and equaled the strength of relationship in the first table that participants saw for each item (within .03 $\Delta$P units). The split tables were accompanied by a note for moderated [non-moderated] conditions: “The tables reveal that the data pattern looks very different [similar] for zelmos who drank salty water during the experiment and for zelmos who drank fresh water during the experiment. Please compare the two tables to see how different [similar] the patterns are.” 
+
+Once all three covariation tables had been presented, participants evaluated either claims about causal relationships or explanations (Table 2). Each claim was presented either at the type or token level. All claims were unqualified; that is, they stated a relationship between eating yonas and sore antennas without mentioning the kind of water the zelmo(s) in question drank. In addition, participants evaluated one counterfactual statement for each scenario; for example, after learning about a group of zelmos who were fed yonas, drank salty water, and developed sore antennas, participants rated their agreement with the statement that “had these zelmos eaten yonas but not drunk salty water, their antennas would still have become sore.” This statement was included to verify that participants differed across the moderated and non-moderated conditions in the role they attributed to the moderator. 
+
+At the end of the experiment, participants answered two multiple-choice comprehension check questions about each scenario they had read (e.g., “According to what you read, as a scientist on planet Zorg you were interested in evaluating the following hypothesis about zelmos: a. eating yona plants produces antenna soreness; b. eating drol mushrooms produces antenna soreness; c. eating mushrooms with stem bumps produces spotted antennas; d. antenna soreness makes zelmos eat yonas”). Participants who answered either question incorrectly were excluded from further analyses. 
+
+Across items, each participant saw two moderated cases and two non-moderated cases, presented in random order. Thus, Experiment 1 had a 2 moderator (moderated vs. nonmoderated relationship) x 2 judgment (causal vs. explanatory) x 2 target (type vs. token) mixed design, with moderator manipulated within-subjects. The dependent variables were agreement with causal or explanatory claims, and agreement with counterfactual claims, measured on a 1 (strongly disagree) to 7 (strongly agree) scale."
+
+![Table 1 (above): Materials used in Experiments 1 (all four items) and 2 (zelmo and drol items only)](images/table1.png)
+
+
+![Fig. 1(above): Sample covariation matrices from Experiment 1: (a) original unsplit table, common across the moderated and non-moderated conditions; (b) split tables in the non-moderated condition, $\Delta$P's = .36 and .38 (*M* = .37); (c) split tables in the moderated condition, $\Delta$P's = .83 and 0.01 (*M* = 0.42)](images/fig1.png)
+
+
+
+![Table 2(above): Sample causal and explanation judgments in Experiment 1, as a function of judgment type (causal vs. explanatory) and target (token vs. type)](images/table2.png)
+
+Link to the Experiment: TBA
+
+### Analysis Plan
+
+The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANVOA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
+
+I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis, and perform the ANOVA using the "anova" function in R. I will then determine whether the result constitutes a successful replication.
+
+### Differences from Original Study
+
+I hope to perform as faithful of a replication as possible - which includes utilizing the same design, stimuli, wording, and analysis pipeline.
+
+Yet, if the researchers are unable to provide any of the materials, I may have to deviate from the exact stimuli/wording used in the original experiment. I may also have to compute the statistical tests in a different computing environment to what the researchers used in their study. Additionally, the population tested in the original experiment were participants on Amazon Mechanical Turk, whereas I will be testing participants on Prolific. I do not expect these differences to influence my ability to replicate the original results.
+
+<!-- ### Methods Addendum (Post Data Collection) -->
+
+<!-- You can comment this section out prior to final report with data collection. -->
+
+<!-- #### Actual Sample -->
+<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan -->
+
+<!-- #### Differences from pre-data collection methods plan -->
+<!--   Any differences from what was described as the original plan, or “none”. -->
+
+## Results
+
+### Data preparation
+
+Data preparation following the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections):
+
+This data preparation process follows the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections). We will first load in the data from qualtrics using the package "qualtRics", then clean the data by removing irrelevant rows/columns and excluding participants who incorrectly answered at least one check question. Then will will transform the dataframe in a format suitable for statistical tests. (including this code chunk for now but will delete in the final replication report):
+	
+```{r include=T}
+###Data Preparation
+
+####Load Relevant Libraries and Functions
+
+library(tidyverse) #and others if necessary
+library(qualtRics)
+
+####Import data
+
+#import data here
+
+#### Data exclusion / filtering
+
+#filter out participants that did not pass comprehension check
+#filter out irrelevant columns
+
+#### Prepare data for analysis - create columns etc.
+
+#prepare data so it's in the right form for data analysis
+```
+
+### Confirmatory analysis
+
+The first goal is to perform the main 2x2x2 mixed ANOVA, which is laid out in the analysis plan and outlined as the analysis of interest. We will simply perform the ANOVA, and plot it using ggplot:
+
+```{r confirmatory/main ANOVA}
+#perform ANOVA on causal/explanatory ratings
+
+#will fill in code once I have data, but use anova function to perform the mixed anova
+
+#plot using ggplot
+
+```
+
+(I will put graphs side by side here, and will determine the success of the replication based on the success criteria laid out above (main effect of moderator ideally with a similar effect size to that of the paper, with not other main effects or interactions.)
+
+![Fig 2: (left) From Vasilyeva et al.: The effect of moderator on ratings of causal and explanatory relationships in Experiment 1. (right) Results of the replication (a)](images/expt1graph.png)
+
+Now we will perform the analysis performed in section 2.2.2 of the paper - not the key analysis of interest but relevant to the experiment. This is a 2 (moderator vs. non-moderator) x 2 (type, token) mixed ANOVA on participants' counterfactual ratings. They found a main effect of moderator but no effect of target and no interaction. We will now perform that analysis and plot it using ggplot:
+
+```{r counterfactual ANOVA}
+#perform ANOVA on counterfactual ratings
+
+#will fill in code once I have data, but use anova function to perform the mixed anova
+
+```
+
+### Exploratory analyses
+
+Any follow-up analyses desired (not required).  
+
+## Discussion
+
+### Summary of Replication Attempt
+
+Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+
+### Commentary
+
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
