@@ -75,7 +75,7 @@ Link to the Experiment: TBA
 
 The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANVOA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
 
-I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis, and perform the ANOVA using the "anova" function in R. I will then determine whether the result constitutes a successful replication.
+I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis (e.g. changing from wide to long format, and other necessary steps that will be taken upon retrieval of the data), and perform the ANOVA using the "anova" function in R. I will then determine whether the result constitutes a successful replication.
 
 ### Differences from Original Study
 
@@ -99,7 +99,7 @@ Yet, if the researchers are unable to provide any of the materials, I may have t
 
 Data preparation following the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections):
 
-This data preparation process follows the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections). We will first load in the data from qualtrics using the package "qualtRics", then clean the data by removing irrelevant rows/columns and excluding participants who incorrectly answered at least one check question. Then will will transform the dataframe in a format suitable for statistical tests. (including this code chunk for now but will delete in the final replication report):
+This data preparation process follows the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections). We will first load in the data from qualtrics using the package "qualtRics", then clean the data by removing irrelevant rows/columns and excluding participants who incorrectly answered at least one check question. Then will will transform the dataframe in a format suitable for statistical tests (e.g. changing from wide to long format). (including this code chunk for now but will delete in the final replication report):
 	
 ```{r include=T}
 ###Data Preparation
@@ -119,7 +119,7 @@ library(qualtRics)
 #filter out irrelevant columns
 
 #### Prepare data for analysis - create columns etc.
-
+# change from wide format to long format
 #prepare data so it's in the right form for data analysis
 ```
 
