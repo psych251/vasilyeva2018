@@ -184,7 +184,7 @@ ggplot(confirmatoryplot, aes(x = presence_of_moderator, y = Mean, fill = presenc
   geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
   theme_classic()
 
-#will fix up this graph to make it a bit prettier later!
+#will fix up this graph (and the one below) to make it a bit prettier and more true to their plot later!
 
 ```
 
