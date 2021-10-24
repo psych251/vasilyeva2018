@@ -12,7 +12,7 @@ output:
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
-##Introduction
+## Introduction
 
 Vasilyeva, Blanchard, & Lombrozo (2018, Cognitive Science) investigated people's evaluations of causal relationships based on *stability* - that is, whether a causal relationship holds across possible moderating variables. Across three experiments, Vasilyeva et al. demonstrated that adults were more likely to endorse *stable* causal claims over *unstable* causal claims (i.e. that don't hold across a potential moderator). Particularly in Experiment 1 (the target of this replication), adults not endorsed *stable* causal claims over *unstable* causal claims when presented with covariation data from a hypothetical science study.
 
@@ -36,7 +36,7 @@ Original paper (as hosted in your repo): https://github.com/psych251/vasilyeva20
 
 ### Power Analysis
 
-TBD
+With a power of .80 and replicating the original effect size of a partial eta squared of .478, we require 24 participants in each condition. (Won't include this in the final replication report, but my G*Power says I actually only need fewer. I will talk to the TAs and Mike to make sure I'm doing this right.) 
 
 ### Planned Sample
 
@@ -69,7 +69,7 @@ Across items, each participant saw two moderated cases and two non-moderated cas
 
 ![Table 2(above): Sample causal and explanation judgments in Experiment 1, as a function of judgment type (causal vs. explanatory) and target (token vs. type)](images/table2.png)
 
-Link to the Experiment: TBA
+Link to the Experiment: https://stanforduniversity.qualtrics.com/jfe/form/SV_87KktOIBlssktKu 
 
 ### Analysis Plan
 
@@ -106,21 +106,57 @@ This data preparation process follows the analysis plan (code will be put in onc
 
 ####Load Relevant Libraries and Functions
 
-library(tidyverse) #and others if necessary
-library(qualtRics)
+library(tidyverse)
+library(plotrix) #and others if necessary
+#library(qualtRics) #haven't gotten API access yet, so ignoring this for nnow
 
 ####Import data
 
-#import data here
+data <- read_csv("../pilotadata.csv")
+
+#am going to use qualtRics package to import directly but haven't gotten API access yet so importing csv file directly
 
 #### Data exclusion / filtering
 
-#filter out participants that did not pass comprehension check
-#filter out irrelevant columns
-
-#### Prepare data for analysis - create columns etc.
-# change from wide format to long format
-#prepare data so it's in the right form for data analysis
+data <- data %>% 
+  mutate(id = row_number()) %>% 
+  select(id, everything()) %>% 
+  filter(Consent == "I do consent to participate") %>% #consenting
+  filter(Mch.z1 == "sometimes have sore antennas",
+         Mch.z2 == "eating yona plants produces antenna soreness",
+         Mch.d1 == "they are sometimes exposed to smoke from forest fires",
+         Mch.d2 == "saline soil causes bumpy stems in drols",
+         Mch.g1 == "they are sometimes exposed to sulfuric acid",
+         Mch.g2 == "exposure to sulfuric acid causes surface cracks in grimonds",
+         Mch.y1 == "they sometimes eat marine snails",
+         Mch.y2 == "eating marine snails causes a brownish tint on yuyus' feathers") %>% #check questions
+  subset(select = -c(2:19)) %>% 
+  select(-starts_with(c("Mch", #getting rid of irrelevant columns
+                        "Comm",
+                        "Age", 
+                        "Gender",
+                        "prolific-id",
+                        "PROLIFIC_PID",
+                        "tableorder"))) %>% 
+  pivot_longer(!c(id, task, moderator), names_to = "question_type", values_to = "rating") %>% #turn table into longer
+  mutate(presence_of_moderator = case_when(moderator == "drolyuyu" & grepl("d3", question_type) ~ "present", #create column indicating whether it was moderated or not
+         moderator == "drolyuyu" & grepl("d4", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y3", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g4", question_type) ~ "present",
+         TRUE ~ "absent")) %>% 
+  mutate("question_type" = case_when(grepl("CaTy", question_type) ~ "causal_type", #change column names
+                                     grepl("ExTy", question_type) ~ "explanatory_type",
+                                     grepl("CaTo", question_type) ~ "causal_token",
+                                     grepl("ExTo", question_type) ~ "explanatory_token",
+                                     grepl("Ty.CF", question_type) ~ "counterfactual_type",
+                                     grepl("To.CF", question_type) ~ "counterfactual_token")) %>% 
+    select(-c(moderator, task)) #get rid of last remaining unnecessary columns
 ```
 
 ### Confirmatory analysis
@@ -130,9 +166,25 @@ The first goal is to perform the main 2x2x2 mixed ANOVA, which is laid out in th
 ```{r confirmatory/main ANOVA}
 #perform ANOVA on causal/explanatory ratings
 
-#will fill in code once I have data, but use anova function to perform the mixed anova
+dataconfirmatory <- data %>% 
+  filter(grepl("counterfactual", question_type) == FALSE)
+
+aov1 <- aov(rating ~ presence_of_moderator*question_type, data)
+
+summary(aov1)
 
 #plot using ggplot
+
+confirmatoryplot <- dataconfirmatory %>% 
+  group_by(presence_of_moderator) %>% 
+  summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
+
+ggplot(confirmatoryplot, aes(x = presence_of_moderator, y = Mean, fill = presence_of_moderator)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
+  theme_classic()
+
+#will fix up this graph to make it a bit prettier later!
 
 ```
 
@@ -145,7 +197,21 @@ Now we will perform the analysis performed in section 2.2.2 of the paper - not t
 ```{r counterfactual ANOVA}
 #perform ANOVA on counterfactual ratings
 
-#will fill in code once I have data, but use anova function to perform the mixed anova
+datacounterfactual <- data %>% 
+  filter(grepl("counterfactual", question_type))
+
+aov2 <- aov(rating ~ presence_of_moderator*question_type, data)
+
+summary(aov2)
+
+counterfactualplot <- datacounterfactual %>% 
+  group_by(presence_of_moderator) %>% 
+  summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
+
+ggplot(counterfactualplot, aes(x = presence_of_moderator, y = Mean, fill = presence_of_moderator)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
+  theme_classic()
 
 ```
 
