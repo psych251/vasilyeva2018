@@ -69,7 +69,7 @@ Across items, each participant saw two moderated cases and two non-moderated cas
 
 ![Table 2(above): Sample causal and explanation judgments in Experiment 1, as a function of judgment type (causal vs. explanatory) and target (token vs. type)](images/table2.png)
 
-Link to the Experiment: https://stanforduniversity.qualtrics.com/jfe/form/SV_87KktOIBlssktKu 
+Link to the Experiment (this is currently the link to Pilot B but will likely duplicate this again for the final data collection): https://stanforduniversity.qualtrics.com/jfe/form/SV_8JkAjgU5meJHcSq
 
 ### Analysis Plan
 
@@ -108,36 +108,37 @@ This data preparation process follows the analysis plan (code will be put in onc
 
 library(tidyverse)
 library(plotrix) #and others if necessary
-#library(qualtRics) #haven't gotten API access yet, so ignoring this for nnow
+library(qualtRics)
+library(ez)
+library(yarrr)
 
 ####Import data
 
-data <- read_csv("../pilotadata.csv")
-
-#am going to use qualtRics package to import directly but haven't gotten API access yet so importing csv file directly
+data <- fetch_survey(surveyID = "SV_8JkAjgU5meJHcSq", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE)
 
 #### Data exclusion / filtering
 
 data <- data %>% 
   mutate(id = row_number()) %>% 
   select(id, everything()) %>% 
-  filter(Consent == "I do consent to participate") %>% #consenting
-  filter(Mch.z1 == "sometimes have sore antennas",
-         Mch.z2 == "eating yona plants produces antenna soreness",
-         Mch.d1 == "they are sometimes exposed to smoke from forest fires",
-         Mch.d2 == "saline soil causes bumpy stems in drols",
-         Mch.g1 == "they are sometimes exposed to sulfuric acid",
-         Mch.g2 == "exposure to sulfuric acid causes surface cracks in grimonds",
-         Mch.y1 == "they sometimes eat marine snails",
-         Mch.y2 == "eating marine snails causes a brownish tint on yuyus' feathers") %>% #check questions
+  filter(Consent == 2) %>% #consenting
+  filter(Mch.z1 == 1,
+         Mch.z2 == 1,
+         Mch.d1 == 1,
+         Mch.d2 == 1,
+         Mch.g1 == 1,
+         Mch.g2 == 1,
+         Mch.y1 == 1,
+         Mch.y2 == 1) %>% #check questions
   subset(select = -c(2:19)) %>% 
-  select(-starts_with(c("Mch", #getting rid of irrelevant columns
+  select(-starts_with(c("Mch", #getting rid of irrelevant columns, including check questions
                         "Comm",
                         "Age", 
                         "Gender",
                         "prolific-id",
                         "PROLIFIC_PID",
-                        "tableorder"))) %>% 
+                        "tableorder",
+                        "cov"))) %>% 
   pivot_longer(!c(id, task, moderator), names_to = "question_type", values_to = "rating") %>% #turn table into longer
   mutate(presence_of_moderator = case_when(moderator == "drolyuyu" & grepl("d3", question_type) ~ "present", #create column indicating whether it was moderated or not
          moderator == "drolyuyu" & grepl("d4", question_type) ~ "present",
@@ -150,30 +151,68 @@ data <- data %>%
          moderator == "zelmogrimond" & grepl("g3", question_type) ~ "present",
          moderator == "zelmogrimond" & grepl("g4", question_type) ~ "present",
          TRUE ~ "absent")) %>% 
-  mutate("question_type" = case_when(grepl("CaTy", question_type) ~ "causal_type", #change column names
-                                     grepl("ExTy", question_type) ~ "explanatory_type",
-                                     grepl("CaTo", question_type) ~ "causal_token",
-                                     grepl("ExTo", question_type) ~ "explanatory_token",
-                                     grepl("Ty.CF", question_type) ~ "counterfactual_type",
-                                     grepl("To.CF", question_type) ~ "counterfactual_token")) %>% 
-    select(-c(moderator, task)) #get rid of last remaining unnecessary columns
+  mutate("causalexplanatoryCF" = case_when(grepl("CaTy", question_type) ~ "causal", #change column names
+                                     grepl("ExTy", question_type) ~ "explanatory",
+                                     grepl("CaTo", question_type) ~ "causal",
+                                     grepl("ExTo", question_type) ~ "explanatory",
+                                     grepl("Ty.CF", question_type) ~ "counterfactual",
+                                     grepl("To.CF", question_type) ~ "counterfactual")) %>% 
+  mutate("typetoken" = case_when(grepl("CaTy", question_type) ~ "type", #change column names
+                                     grepl("ExTy", question_type) ~ "type",
+                                     grepl("CaTo", question_type) ~ "token",
+                                     grepl("ExTo", question_type) ~ "token",
+                                     grepl("Ty.CF", question_type) ~ "type",
+                                     grepl("To.CF", question_type) ~ "token")) %>% 
+  filter(!is.na(rating)) %>% 
+  select(-c(moderator, task, question_type)) #get rid of last remaining unnecessary columns
 ```
 
 ### Confirmatory analysis
 
-The first goal is to perform the main 2x2x2 mixed ANOVA, which is laid out in the analysis plan and outlined as the analysis of interest. We will simply perform the ANOVA, and plot it using ggplot:
+The first goal is to perform the main 2x2x2 mixed ANOVA, which is laid out in the analysis plan and outlined as the analysis of interest. We will simply perform the ANOVA, and plot it using ggplot (using the same method as the paper just for the sake of comparison, but further plots are shown below):
 
 ```{r confirmatory/main ANOVA}
 #perform ANOVA on causal/explanatory ratings
 
 dataconfirmatory <- data %>% 
-  filter(grepl("counterfactual", question_type) == FALSE)
+  filter(grepl("counterfactual", causalexplanatoryCF) == FALSE)
 
-aov1 <- aov(rating ~ presence_of_moderator*question_type, data)
+aov1 <- ezANOVA(data = dataconfirmatory, dv = rating, wid = id, within = presence_of_moderator, between = c(causalexplanatoryCF, typetoken), detailed = TRUE)
 
 summary(aov1)
+```
 
-#plot using ggplot
+
+```{r partial eta squared}
+if (!require(MBESS)) { install.packages("MBESS"); library(MBESS) }
+
+results <- aov1
+
+results$ANOVA$partialetasquared <- results$ANOVA$SSn/(results$ANOVA$SSn+results$ANOVA$SSd) #code taken to produce the partial eta squared from ezANOVA, found here: https://groups.google.com/g/ez4r/c/4CHBP-jlZGY?pli=1 
+loweretasquared <- c()
+upperetasquared <- c()
+for (cR in 1:nrow(results$ANOVA)) {
+  Lims <- conf.limits.ncf(F.value = results$ANOVA$F[cR], conf.level = 0.95, df.1 <- results$ANOVA$DFn[cR], df.2 <- results$ANOVA$DFd[cR])
+  Lower.lim <- Lims$Lower.Limit/(Lims$Lower.Limit + df.1 + df.2 + 1)
+  Upper.lim <- Lims$Upper.Limit/(Lims$Upper.Limit + df.1 + df.2 + 1)
+  if (is.na(Lower.lim)) {
+    Lower.lim <- 0
+  }
+  if (is.na(Upper.lim)) {
+    Upper.lim <- 1
+  }
+  loweretasquared <- c(loweretasquared,Lower.lim)
+  upperetasquared <- c(upperetasquared,Upper.lim)
+}
+results$ANOVA$partialetasquared.lower <- loweretasquared
+results$ANOVA$partialetasquared.upper <- upperetasquared
+
+print(results$ANOVA$partialetasquared[4]) #this is the partial eta squared of the effect
+```
+
+
+```{r confirmatory/main ANOVA}
+#plot using ggplot, using same method as paper just for comparison
 
 confirmatoryplot <- dataconfirmatory %>% 
   group_by(presence_of_moderator) %>% 
@@ -182,7 +221,10 @@ confirmatoryplot <- dataconfirmatory %>%
 ggplot(confirmatoryplot, aes(x = presence_of_moderator, y = Mean, fill = presence_of_moderator)) +
   geom_bar(position = "dodge", stat = "identity") +
   geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
-  theme_classic()
+  theme_classic() +
+  ylab("Cause/Explanation Ratings") +
+  scale_color_manual(labels = c("Non-Moderated", "Moderated"), values = c("white", "black")) +
+  theme(legend.position = "top")
 
 #will fix up this graph (and the one below) to make it a bit prettier and more true to their plot later!
 
@@ -192,18 +234,68 @@ ggplot(confirmatoryplot, aes(x = presence_of_moderator, y = Mean, fill = presenc
 
 ![Fig 2: (left) From Vasilyeva et al.: The effect of moderator on ratings of causal and explanatory relationships in Experiment 1. (right) Results of the replication (a)](images/expt1graph.png)
 
+```{r pirate plot}
+
+#as per suggestion: pirate plot of all condition differences
+
+pirateplot(formula = rating ~ presence_of_moderator,
+           data = dataconfirmatory,
+           theme = 3,
+           main = "theme = 3")
+
+pirateplot(formula = rating ~ causalexplanatoryCF,
+           data = dataconfirmatory,
+           theme = 3,
+           main = "theme = 3")
+
+pirateplot(formula = rating ~ typetoken,
+           data = dataconfirmatory,
+           theme = 3,
+           main = "theme = 3")
+
+```
+
 Now we will perform the analysis performed in section 2.2.2 of the paper - not the key analysis of interest but relevant to the experiment. This is a 2 (moderator vs. non-moderator) x 2 (type, token) mixed ANOVA on participants' counterfactual ratings. They found a main effect of moderator but no effect of target and no interaction. We will now perform that analysis and plot it using ggplot:
 
 ```{r counterfactual ANOVA}
 #perform ANOVA on counterfactual ratings
 
 datacounterfactual <- data %>% 
-  filter(grepl("counterfactual", question_type))
+  filter(grepl("counterfactual", causalexplanatoryCF))
 
-aov2 <- aov(rating ~ presence_of_moderator*question_type, data)
+aov2 <- ezANOVA(data = datacounterfactual, dv = rating, wid = id, within = presence_of_moderator, between = c(causalexplanatoryCF, typetoken), detailed = TRUE)
 
 summary(aov2)
+```
 
+```{r}
+results <- aov2
+
+results$ANOVA$partialetasquared <- results$ANOVA$SSn/(results$ANOVA$SSn+results$ANOVA$SSd) #code taken to produce the partial eta squared from ezANOVA, found here: https://groups.google.com/g/ez4r/c/4CHBP-jlZGY?pli=1 
+
+loweretasquared <- c()
+upperetasquared <- c()
+for (cR in 1:nrow(results$ANOVA)) {
+  Lims <- conf.limits.ncf(F.value = results$ANOVA$F[cR], conf.level = 0.95, df.1 <- results$ANOVA$DFn[cR], df.2 <- results$ANOVA$DFd[cR])
+  Lower.lim <- Lims$Lower.Limit/(Lims$Lower.Limit + df.1 + df.2 + 1)
+  Upper.lim <- Lims$Upper.Limit/(Lims$Upper.Limit + df.1 + df.2 + 1)
+  if (is.na(Lower.lim)) {
+    Lower.lim <- 0
+  }
+  if (is.na(Upper.lim)) {
+    Upper.lim <- 1
+  }
+  loweretasquared <- c(loweretasquared,Lower.lim)
+  upperetasquared <- c(upperetasquared,Upper.lim)
+}
+results$ANOVA$partialetasquared.lower <- loweretasquared
+results$ANOVA$partialetasquared.upper <- upperetasquared
+
+print(results$ANOVA$partialetasquared[4])
+```
+
+
+```{r counterfactual ANOVA}
 counterfactualplot <- datacounterfactual %>% 
   group_by(presence_of_moderator) %>% 
   summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
@@ -211,11 +303,28 @@ counterfactualplot <- datacounterfactual %>%
 ggplot(counterfactualplot, aes(x = presence_of_moderator, y = Mean, fill = presence_of_moderator)) +
   geom_bar(position = "dodge", stat = "identity") +
   geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
-  theme_classic()
+  theme_classic() + 
+  ylab("Counterfactual Ratings") +
+  scale_color_manual(labels = c("Non-Moderated", "Moderated"), values = c("white", "black")) +
+  theme(legend.position = "top")
 
 ```
+```{r}
+pirateplot(formula = rating ~ presence_of_moderator,
+           data = datacounterfactual,
+           theme = 3,
+           main = "theme = 3")
 
+pirateplot(formula = rating ~ typetoken,
+           data = datacounterfactual,
+           theme = 3,
+           main = "theme = 3")
+```
 ### Exploratory analyses
+
+```{r}
+#in this section going to look for effect of check questions, and the ones that I implemented
+```
 
 Any follow-up analyses desired (not required).  
 
