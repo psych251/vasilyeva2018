@@ -40,7 +40,7 @@ With a power of .80 and replicating the original effect size of a partial eta sq
 
 ### Planned Sample
 
-Participants will be limited to Prolific users in the United States, and failure on any of the original omprehension questions in the survey will result in exclusion from analysis (not the comprehension questions added at the end for exploratory purposes). Otherwise, there are no other preselection rules or other restrictions on the sample. We will proceed with 24 participants, 
+Participants will be limited to Prolific users in the United States, with a 98 approval rate or higher, and those who have not participated in any piloting of this experiment. Failure on any of the original comprehension questions in the survey will result in exclusion from analysis (i.e. not the two comprehension questions added at the end for exploratory purposes). Otherwise, there are no other preselection rules or other restrictions on the sample. We will proceed with 24 participants as per the power analysis.
 
 ### Materials, Design, and Procedure
 
@@ -73,17 +73,17 @@ Link to the Experiment: https://stanforduniversity.qualtrics.com/jfe/form/SV_bQ6
 
 ### Analysis Plan
 
-The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANVOA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
+The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANOVA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
 
 I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis (e.g. changing from wide to long format, and other necessary steps that will be taken upon retrieval of the data), perform the ANOVA using the "aov" function in R, calculate effect sizes, and plot the data. I will then determine whether the result constitutes a successful replication.
 
 ### Differences from Original Study
 
-I hope to perform as faithful of a replication as possible - which includes utilizing the same design, stimuli, wording, and analysis pipeline.
+I hope to perform as faithful of a replication as possible - which includes utilizing the same design, stimuli, wording, and analysis pipeline. But one critical change to the experiment is that I will be adding two check questions at the very end of the experiment (after all of the content of the original experiment), for exploratory purposes to test participants' understanding of the covariation tables. I will analyze this in my exploratory analyses. Additionally, following best survey practices, I have added labels to all scales. Finally, I have changed the instructions of the experiment, the ending, method of feedback, and gender question, which constitute very minor changes from the original experiment.
 
-If the researchers are unable to provide any of the materials, I may have to deviate from the exact stimuli/wording used in the original experiment. I may also have to compute the statistical tests in a different computing environment to what the researchers used in their study. Additionally, the population tested in the original experiment were participants on Amazon Mechanical Turk, whereas I will be testing participants on Prolific. I do not expect these differences to influence my ability to replicate the original results.
+If the researchers are unable to provide any of the materials, I may have to deviate from the exact stimuli/wording used in the original experiment. I may also have to compute the statistical tests in a different computing environment to what the researchers used in their study. Additionally, the population tested in the original experiment were participants on Amazon Mechanical Turk, whereas I will be testing participants on Prolific with high approval rates. I do not expect these differences to influence my ability to replicate the original results.
 
-I also plan on producing additional plots (e.g. pirate plots) to investigate the full distribution of the data across the various independent variables.
+I also plan on producing additional plots (e.g. pirate plots) to investigate the full distribution of the data across the various independent variables (i.e. not only the presence of moderator, but also the cause/explanatory variable, and type/token). 
 
 <!-- ### Methods Addendum (Post Data Collection) -->
 
