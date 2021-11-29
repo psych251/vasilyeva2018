@@ -22,9 +22,9 @@ I plan on replicating the result from Experiment 1 - that adults were more likel
 
 ### Procedure and Anticipated Challenges
 
-The study will be run on Prolific with adults in the United States. The task is simple - participants will read blocks of text describing a scientists' investigation on a novel alien population, then be given covariation data from the scientists' study. There are no other materials other than the text from the questions and scenario. I will obtain the exact stimuli (scenario and question wording) from the researchers, build a Qualtrics survey for the task, and analyze the data using R. For this, I will need funds to run participants on Prolific. One key concern about this experiment in particular is the exclusion rate - the authors of the original paper excluded a lot their tested participants. I will keep an eye on this exclusion rate and discuss with the TAs and Mike to see if it constitutes a bigger issue for carrying out the project.
+The study will be run on Prolific with adults in the United States. The task is simple - participants will read blocks of text describing a scientists' investigation on a novel alien population, then be given covariation data from the scientists' study. There are no other materials other than the text from the questions and scenario. I will obtain the exact stimuli (scenario and question wording) from the researchers, build a Qualtrics survey for the task, and analyze the data using R. For this, I will need funds to run participants on Prolific. One key concern about this experiment in particular is the exclusion rate. I will keep an eye on this exclusion rate and discuss with the TAs and Mike to see if it constitutes a bigger issue for carrying out the project, but also conduct exploratory analyses with additional check questions to see if different exclusion criteria changes the results in a meaningful way.
 
-There appears to an OSF link on the paper, but it is broken. A further search shows that the data file for this experiment on OSF is empty - there are no open materials from this experiment online. I will have to contact the researchers to request more information about administration of the task, clarification on the exact study design, the stimuli and question wording and coding (beyond what is written in the paper, which spells out most of the wording already), and clarification on their analyses. Obtaining a near exact replication may be hard if obtaining these materials is difficult.
+There appears to an OSF link on the paper, but it is broken. The data file for this experiment on OSF appears to be empty - there are no open materials from this experiment online. I will have to contact the researchers to request more information about administration of the task, clarification on the exact study design, the stimuli and question wording and coding (beyond what is written in the paper, which spells out most of the wording already), and clarification on their analyses.
 
 ### Links
 
@@ -36,11 +36,11 @@ Original paper (as hosted in your repo): https://github.com/psych251/vasilyeva20
 
 ### Power Analysis
 
-With a power of .80 and replicating the original effect size of a partial eta squared of .478, we require 24 participants in each condition. (Won't include this in the final replication report, but my G*Power says I actually only need fewer. I will talk to the TAs and Mike to make sure I'm doing this right.) 
+With a power of .80 and replicating the original effect size of a partial eta squared of .478, we require 6 participants in each of the four conditions  (12 in moderated/non-moderated).
 
 ### Planned Sample
 
-Power analyses have yet to take place to determine participants in each condition. Participants will be limited to Prolific users in the United States, and failure on any of the comprehension questions in the survey will result in exclusion from analysis. Otherwise, there are no other preselection rules or other restrictions on the sample.
+Participants will be limited to Prolific users in the United States, and failure on any of the comprehension questions in the survey will result in exclusion from analysis. Otherwise, there are no other preselection rules or other restrictions on the sample.
 
 ### Materials, Design, and Procedure
 
@@ -75,13 +75,15 @@ Link to the Experiment (this is currently the link to Pilot B but will likely du
 
 The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANVOA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
 
-I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis (e.g. changing from wide to long format, and other necessary steps that will be taken upon retrieval of the data), and perform the ANOVA using the "anova" function in R. I will then determine whether the result constitutes a successful replication.
+I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis (e.g. changing from wide to long format, and other necessary steps that will be taken upon retrieval of the data), perform the ANOVA using the "aov" function in R, calculate effect sizes, and plot the data. I will then determine whether the result constitutes a successful replication.
 
 ### Differences from Original Study
 
 I hope to perform as faithful of a replication as possible - which includes utilizing the same design, stimuli, wording, and analysis pipeline.
 
-Yet, if the researchers are unable to provide any of the materials, I may have to deviate from the exact stimuli/wording used in the original experiment. I may also have to compute the statistical tests in a different computing environment to what the researchers used in their study. Additionally, the population tested in the original experiment were participants on Amazon Mechanical Turk, whereas I will be testing participants on Prolific. I do not expect these differences to influence my ability to replicate the original results.
+If the researchers are unable to provide any of the materials, I may have to deviate from the exact stimuli/wording used in the original experiment. I may also have to compute the statistical tests in a different computing environment to what the researchers used in their study. Additionally, the population tested in the original experiment were participants on Amazon Mechanical Turk, whereas I will be testing participants on Prolific. I do not expect these differences to influence my ability to replicate the original results.
+
+I also plan on producing additional plots (e.g. pirate plots) to investigate the full distribution of the data across the various independent variables.
 
 <!-- ### Methods Addendum (Post Data Collection) -->
 
@@ -97,11 +99,11 @@ Yet, if the researchers are unable to provide any of the materials, I may have t
 
 ### Data preparation
 
-Data preparation following the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections):
+Data preparation following the analysis plan:
 
-This data preparation process follows the analysis plan (code will be put in once I have data, for now am just commenting what would be in these sections). We will first load in the data from qualtrics using the package "qualtRics", then clean the data by removing irrelevant rows/columns and excluding participants who incorrectly answered at least one check question. Then will will transform the dataframe in a format suitable for statistical tests (e.g. changing from wide to long format). (including this code chunk for now but will delete in the final replication report):
+This data preparation process follows the analysis plan. We will first load in the data from qualtrics using the package "qualtRics", then clean the data by removing irrelevant rows/columns and excluding participants who incorrectly answered at least one check question. Then will will transform the dataframe in a format suitable for statistical tests (e.g. changing from wide to long format):
 	
-```{r include=T}
+```{r data cleaning, include=T}
 ###Data Preparation
 
 ####Load Relevant Libraries and Functions
@@ -111,10 +113,13 @@ library(plotrix) #and others if necessary
 library(qualtRics)
 library(ez)
 library(yarrr)
+library(DescTools)
 
 ####Import data
 
-data <- fetch_survey(surveyID = "SV_8JkAjgU5meJHcSq", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE)
+#data <- fetch_survey(surveyID = "SV_8JkAjgU5meJHcSq", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE)
+
+data <- fetch_survey(surveyID = "SV_9Le4JS7MdQcZ3ee", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE)
 
 #### Data exclusion / filtering
 
@@ -171,47 +176,38 @@ data <- data %>%
 
 The first goal is to perform the main 2x2x2 mixed ANOVA, which is laid out in the analysis plan and outlined as the analysis of interest. We will simply perform the ANOVA, and plot it using ggplot (using the same method as the paper just for the sake of comparison, but further plots are shown below):
 
-```{r confirmatory/main ANOVA}
+First, we will get rid of the counterfactual data:
+
+```{r main data cleaning}
 #perform ANOVA on causal/explanatory ratings
 
-#dataconfirmatory <- data %>% 
-  #filter(grepl("counterfactual", causalexplanatoryCF) == FALSE)
-
-#aov1 <- ezANOVA(data = dataconfirmatory, dv = rating, wid = id, within = presence_of_moderator, between = c(causalexplanatoryCF, typetoken), detailed = TRUE)
-
-#summary(aov1)
+dataconfirmatory <- data %>%
+  filter(grepl("counterfactual", causalexplanatoryCF) == FALSE)
 ```
 
+Now we perform the ANOVA:
 
-```{r partial eta squared}
-# if (!require(MBESS)) { install.packages("MBESS"); library(MBESS) }
-# 
-# results <- aov1
-# 
-# results$ANOVA$partialetasquared <- results$ANOVA$SSn/(results$ANOVA$SSn+results$ANOVA$SSd) #code taken to produce the partial eta squared from ezANOVA, found here: https://groups.google.com/g/ez4r/c/4CHBP-jlZGY?pli=1 
-# loweretasquared <- c()
-# upperetasquared <- c()
-# for (cR in 1:nrow(results$ANOVA)) {
-#   Lims <- conf.limits.ncf(F.value = results$ANOVA$F[cR], conf.level = 0.95, df.1 <- results$ANOVA$DFn[cR], df.2 <- results$ANOVA$DFd[cR])
-#   Lower.lim <- Lims$Lower.Limit/(Lims$Lower.Limit + df.1 + df.2 + 1)
-#   Upper.lim <- Lims$Upper.Limit/(Lims$Upper.Limit + df.1 + df.2 + 1)
-#   if (is.na(Lower.lim)) {
-#     Lower.lim <- 0
-#   }
-#   if (is.na(Upper.lim)) {
-#     Upper.lim <- 1
-#   }
-#   loweretasquared <- c(loweretasquared,Lower.lim)
-#   upperetasquared <- c(upperetasquared,Upper.lim)
-# }
-# results$ANOVA$partialetasquared.lower <- loweretasquared
-# results$ANOVA$partialetasquared.upper <- upperetasquared
-# 
-# print(results$ANOVA$partialetasquared[4]) #this is the partial eta squared of the effect
+```{r main anova}
+aov1 <- aov(rating ~ (presence_of_moderator*causalexplanatoryCF*typetoken) + Error(id/(presence_of_moderator)) + (causalexplanatoryCF*typetoken), data = dataconfirmatory)
+
+summary(aov1)
 ```
 
+and the effect size:
 
-```{r confirmatory/main ANOVA}
+```{r main eta sq}
+
+etasq1 <- EtaSq(aov1, type = 1, anova = TRUE)
+
+etasq1 #full table
+
+etasq1[1,2] #effect size for the presence of moderator
+
+```
+
+Now we plot it similarly to the paper, using a bar plot and only showing the effect for the presence of the moderator:
+
+```{r confirmatory/main ANOVA, fig.width = 5}
 #plot using ggplot, using same method as paper just for comparison
 
 confirmatoryplot <- dataconfirmatory %>% 
@@ -219,106 +215,155 @@ confirmatoryplot <- dataconfirmatory %>%
   summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
 
 ggplot(confirmatoryplot, aes(x = presence_of_moderator, y = Mean, fill = presence_of_moderator)) +
-  geom_bar(position = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity", width = .6) +
   geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
   theme_classic() +
   ylab("Cause/Explanation Ratings") +
-  scale_color_manual(labels = c("Non-Moderated", "Moderated"), values = c("white", "black")) +
+  xlab("Presence of Moderator")+
+  scale_x_discrete(labels = c("Non-Moderated", "Moderated")) +
+  scale_fill_manual(guide = NULL, name = "Presence of Moderator", labels = c("Non-moderated", "Moderated"), values = c("gray", "grey20")) +
   theme(legend.position = "top")
-
-#will fix up this graph (and the one below) to make it a bit prettier and more true to their plot later!
 
 ```
 
-(I will put graphs side by side here, and will determine the success of the replication based on the success criteria laid out above (main effect of moderator ideally with a similar effect size to that of the paper, with not other main effects or interactions.)
+We can now visually compare the plot generated from the replication to the plot in the original paper:
 
 ![Fig 2: (left) From Vasilyeva et al.: The effect of moderator on ratings of causal and explanatory relationships in Experiment 1. (right) Results of the replication (a)](images/expt1graph.png)
 
-```{r pirate plot}
+For a more comprehensive look at the data, we can create pirate plots for each independent variable, and view its distribution. Consistent with the original paper, we should see differences in the presence of moderator, but not in the causal/explanatory judgments, or the type/token judgments:
+
+```{r main pirate plots}
 
 #as per suggestion: pirate plot of all condition differences
 
 pirateplot(formula = rating ~ presence_of_moderator,
            data = dataconfirmatory,
            theme = 3,
-           main = "theme = 3")
+           xlab = "Presence of Moderator",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Non-Moderated", "Moderated"), lwd = 0)
 
 pirateplot(formula = rating ~ causalexplanatoryCF,
            data = dataconfirmatory,
            theme = 3,
-           main = "theme = 3")
+           xlab = "Causal vs. Explanatory Questions",
+           ylab = "Endorsement Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Causal", "Explanatory"), lwd = 0)
 
 pirateplot(formula = rating ~ typetoken,
            data = dataconfirmatory,
            theme = 3,
-           main = "theme = 3")
+           xlab = "Type vs. Token Questions",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Token", "Type"), lwd = 0)
 
 ```
-
 Now we will perform the analysis performed in section 2.2.2 of the paper - not the key analysis of interest but relevant to the experiment. This is a 2 (moderator vs. non-moderator) x 2 (type, token) mixed ANOVA on participants' counterfactual ratings. They found a main effect of moderator but no effect of target and no interaction. We will now perform that analysis and plot it using ggplot:
 
-```{r counterfactual ANOVA}
+First, get rid of the non-counterfactual data:
+
+```{r counterfactual data cleaning}
 #perform ANOVA on counterfactual ratings
 
-# datacounterfactual <- data %>% 
-#   filter(grepl("counterfactual", causalexplanatoryCF))
-# 
-# aov2 <- ezANOVA(data = datacounterfactual, dv = rating, wid = id, within = presence_of_moderator, between = c(causalexplanatoryCF, typetoken), detailed = TRUE)
-# 
-# summary(aov2)
+datacounterfactual <- data %>%
+  filter(grepl("counterfactual", causalexplanatoryCF))
 ```
 
-```{r}
-# results <- aov2
-# 
-# results$ANOVA$partialetasquared <- results$ANOVA$SSn/(results$ANOVA$SSn+results$ANOVA$SSd) #code taken to produce the partial eta squared from ezANOVA, found here: https://groups.google.com/g/ez4r/c/4CHBP-jlZGY?pli=1 
-# 
-# loweretasquared <- c()
-# upperetasquared <- c()
-# for (cR in 1:nrow(results$ANOVA)) {
-#   Lims <- conf.limits.ncf(F.value = results$ANOVA$F[cR], conf.level = 0.95, df.1 <- results$ANOVA$DFn[cR], df.2 <- results$ANOVA$DFd[cR])
-#   Lower.lim <- Lims$Lower.Limit/(Lims$Lower.Limit + df.1 + df.2 + 1)
-#   Upper.lim <- Lims$Upper.Limit/(Lims$Upper.Limit + df.1 + df.2 + 1)
-#   if (is.na(Lower.lim)) {
-#     Lower.lim <- 0
-#   }
-#   if (is.na(Upper.lim)) {
-#     Upper.lim <- 1
-#   }
-#   loweretasquared <- c(loweretasquared,Lower.lim)
-#   upperetasquared <- c(upperetasquared,Upper.lim)
-# }
-# results$ANOVA$partialetasquared.lower <- loweretasquared
-# results$ANOVA$partialetasquared.upper <- upperetasquared
-# 
-# print(results$ANOVA$partialetasquared[4])
+Now we perform the ANOVA:
+
+```{r counterfactual anova}
+aov2 <- aov(rating ~ (presence_of_moderator*typetoken) + Error(id/(presence_of_moderator)) + (typetoken), data = datacounterfactual)
+
+summary(aov2)
 ```
 
+and compute the effect size:
 
-```{r counterfactual ANOVA}
+```{r counterfactual eta sq}
+
+etasq2 <- EtaSq(aov2, type = 1, anova = TRUE)
+
+etasq2
+
+etasq2[1,2]
+
+```
+
+Now we can plot it using the aesthetics from the paper (though they did not actually report this plot, putting it here for the sake of symmetry with the previous section):
+
+```{r counterfactual ANOVA, fig.width = 5}
 counterfactualplot <- datacounterfactual %>% 
   group_by(presence_of_moderator) %>% 
   summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
 
 ggplot(counterfactualplot, aes(x = presence_of_moderator, y = Mean, fill = presence_of_moderator)) +
-  geom_bar(position = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity", width = .6) +
   geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
   theme_classic() + 
-  ylab("Counterfactual Ratings") +
-  scale_color_manual(labels = c("Non-Moderated", "Moderated"), values = c("white", "black")) +
+  ylab("Cause/Explanation Ratings") +
+  xlab("Presence of Moderator")+
+  scale_x_discrete(labels = c("Non-Moderated", "Moderated")) +
+  scale_fill_manual(guide = NULL, name = "Presence of Moderator", labels = c("Non-moderated", "Moderated"), values = c("gray", "grey20")) +
   theme(legend.position = "top")
 
 ```
-```{r}
+
+Likewise with the previous section, we can generate pirate plots showing the presence of moderator, and type/token. Consistent with the paper, a replication would find a difference in the presence of moderator, but not in the type/token judgments.
+
+```{r counterfactual pirate plot}
 pirateplot(formula = rating ~ presence_of_moderator,
            data = datacounterfactual,
            theme = 3,
-           main = "theme = 3")
+           xlab = "Presence of Moderator",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Non-Moderated", "Moderated"), lwd = 0)
 
 pirateplot(formula = rating ~ typetoken,
            data = datacounterfactual,
            theme = 3,
-           main = "theme = 3")
+           xlab = "Presence of Moderator",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Token", "Type"), lwd = 0)
 ```
 ### Exploratory analyses
 
