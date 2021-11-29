@@ -36,11 +36,11 @@ Original paper (as hosted in your repo): https://github.com/psych251/vasilyeva20
 
 ### Power Analysis
 
-With a power of .80 and replicating the original effect size of a partial eta squared of .478, we require 6 participants in each of the four conditions  (12 in moderated/non-moderated).
+With a power of .80 and replicating the original effect size of a partial eta squared of .478, we require 12 participants total across conditions, and will run 24 to account for exclusions. The power analysis was conducted in G*Power with the information given in the original paper.
 
 ### Planned Sample
 
-Participants will be limited to Prolific users in the United States, and failure on any of the comprehension questions in the survey will result in exclusion from analysis. Otherwise, there are no other preselection rules or other restrictions on the sample.
+Participants will be limited to Prolific users in the United States, and failure on any of the original omprehension questions in the survey will result in exclusion from analysis (not the comprehension questions added at the end for exploratory purposes). Otherwise, there are no other preselection rules or other restrictions on the sample. We will proceed with 24 participants, 
 
 ### Materials, Design, and Procedure
 
@@ -69,7 +69,7 @@ Across items, each participant saw two moderated cases and two non-moderated cas
 
 ![Table 2(above): Sample causal and explanation judgments in Experiment 1, as a function of judgment type (causal vs. explanatory) and target (token vs. type)](images/table2.png)
 
-Link to the Experiment (this is currently the link to Pilot B but will likely duplicate this again for the final data collection): https://stanforduniversity.qualtrics.com/jfe/form/SV_8JkAjgU5meJHcSq
+Link to the Experiment: https://stanforduniversity.qualtrics.com/jfe/form/SV_bQ6I1kuS75Z5Jvo
 
 ### Analysis Plan
 
