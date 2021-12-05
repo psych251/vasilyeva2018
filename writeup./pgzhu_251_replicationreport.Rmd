@@ -28,9 +28,13 @@ There appears to an OSF link on the paper, but it is broken. The data file for t
 
 ### Links
 
-Project repository (on Github): https://github.com/psych251/vasilyeva2018.git
+Project repository (on Github): https://github.com/psych251/vasilyeva2018.git. Data file from replication also present in the repo - while the primary code here is using the qualtRics package to import the data directly from Qualtrics, the data in the repo is also useable.
 
 Original paper (as hosted in your repo): https://github.com/psych251/vasilyeva2018/blob/main/original_paper/Vasilyeva_Blanchard_Lombrozo_2018.pdf or https://onlinelibrary.wiley.com/doi/10.1111/cogs.12605  
+
+Link to the Experiment: https://stanforduniversity.qualtrics.com/jfe/form/SV_bQ6I1kuS75Z5Jvo
+
+Link to the Preregistration: https://osf.io/efdz9 
 
 ## Methods
 
@@ -46,19 +50,19 @@ Participants will be limited to Prolific users in the United States, with a 98 a
 
 From the article: 
 
-"Participants first completed a short training to ensure that they could interpret covariation tables and were then placed in the role of a scientist (zoologist, botanist, geologist, or ornithologist) studying several natural kinds on a fictional planet. Table 1 shows the four kinds — zelmos, drols, grimonds, and yuyus — each associated with a triad of variables (putative cause, effect, and moderator). We illustrate the procedure with zelmos, but the structure was matched across cases. 
+> "Participants first completed a short training to ensure that they could interpret covariation tables and were then placed in the role of a scientist (zoologist, botanist, geologist, or ornithologist) studying several natural kinds on a fictional planet. Table 1 shows the four kinds — zelmos, drols, grimonds, and yuyus — each associated with a triad of variables (putative cause, effect, and moderator). We illustrate the procedure with zelmos, but the structure was matched across cases. 
 
-The scientist was described as investigating the hypothesis that eating yona plants is causally related to developing sore antennas. Participants were told that to test the hypothesis, the scientist performed an experiment, selecting a random sample of 200 zelmos and randomly assigning them to two equal groups that ate a diet either containing or not containing yonas. Participants saw the results of the experiment in the form of a 2 x 2 covariation table cross-classifying zelmos based on whether they ate yonas or not, and whether they developed sore antennas or not (see Fig. 1a). The numbers in the table were selected to provide support for a relationship with causal strength equal to a $\Delta$P of about .4 (range 0.39–0.42).
+> The scientist was described as investigating the hypothesis that eating yona plants is causally related to developing sore antennas. Participants were told that to test the hypothesis, the scientist performed an experiment, selecting a random sample of 200 zelmos and randomly assigning them to two equal groups that ate a diet either containing or not containing yonas. Participants saw the results of the experiment in the form of a 2 x 2 covariation table cross-classifying zelmos based on whether they ate yonas or not, and whether they developed sore antennas or not (see Fig. 1a). The numbers in the table were selected to provide support for a relationship with causal strength equal to a $\Delta$P of about .4 (range 0.39–0.42).
 
-The scientist then decided to conduct a second experiment with a new, larger sample of 400 zelmos, again randomly assigning zelmos to one of the two diets. But this time the scientist discovered after the experiment that due to a miscommunication between research assistants, half of the zelmos were given salty water, and the other half were given fresh water. The two values of this potentially moderating variable were always said to occur normally on the planet; for example, in the wild, zelmos drink either fresh or salty water, depending on what’s available. (This moderating variable played the role of a “background circumstance” relative to which the cause-effect relationship (e.g., eating yonas --> sore antennas was stable or unstable.) Luckily for the scientist, the moderator and cause variables varied orthogonally. Participants were told that “to see whether drinking salty water made a difference to the effects of yonas on sore antennas, you decide to look at the results of the experiment within each of these two groups.” This time participants were presented with the data split into two tables, one for the salty water subgroup, and one for the fresh water subgroup, each table cross-classifying zelmos in terms of diet and antenna soreness (see Fig. 1). 
+> The scientist then decided to conduct a second experiment with a new, larger sample of 400 zelmos, again randomly assigning zelmos to one of the two diets. But this time the scientist discovered after the experiment that due to a miscommunication between research assistants, half of the zelmos were given salty water, and the other half were given fresh water. The two values of this potentially moderating variable were always said to occur normally on the planet; for example, in the wild, zelmos drink either fresh or salty water, depending on what’s available. (This moderating variable played the role of a “background circumstance” relative to which the cause-effect relationship (e.g., eating yonas --> sore antennas was stable or unstable.) Luckily for the scientist, the moderator and cause variables varied orthogonally. Participants were told that “to see whether drinking salty water made a difference to the effects of yonas on sore antennas, you decide to look at the results of the experiment within each of these two groups.” This time participants were presented with the data split into two tables, one for the salty water subgroup, and one for the fresh water subgroup, each table cross-classifying zelmos in terms of diet and antenna soreness (see Fig. 1). 
 
-Depending on condition, the split tables indicated a relationship that was either moderated or not moderated. In the moderated cases (illustrated in Fig. 1c), in one subgroup (salty water) the relationship between eating yonas and sore antennas was very strong ($\Delta$P = .81–0.86), while in the other subgroup (fresh water), the relationship disappeared ($\Delta$P = .00–0.01). In the non-moderated cases (Fig. 1b), each of the split tables corresponded to relationships with a $\Delta$P comparable to the ~0.40 from the original, unsplit table. Importantly, the average strength of the relationship across the two split tables was the same in the moderated and non-moderated conditions (or differed by no more than 0.05 $\Delta$P units, always in the direction working against our hypothesis3), and equaled the strength of relationship in the first table that participants saw for each item (within .03 $\Delta$P units). The split tables were accompanied by a note for moderated [non-moderated] conditions: “The tables reveal that the data pattern looks very different [similar] for zelmos who drank salty water during the experiment and for zelmos who drank fresh water during the experiment. Please compare the two tables to see how different [similar] the patterns are.” 
+> Depending on condition, the split tables indicated a relationship that was either moderated or not moderated. In the moderated cases (illustrated in Fig. 1c), in one subgroup (salty water) the relationship between eating yonas and sore antennas was very strong ($\Delta$P = .81–0.86), while in the other subgroup (fresh water), the relationship disappeared ($\Delta$P = .00–0.01). In the non-moderated cases (Fig. 1b), each of the split tables corresponded to relationships with a $\Delta$P comparable to the ~0.40 from the original, unsplit table. Importantly, the average strength of the relationship across the two split tables was the same in the moderated and non-moderated conditions (or differed by no more than 0.05 $\Delta$P units, always in the direction working against our hypothesis3), and equaled the strength of relationship in the first table that participants saw for each item (within .03 $\Delta$P units). The split tables were accompanied by a note for moderated [non-moderated] conditions: “The tables reveal that the data pattern looks very different [similar] for zelmos who drank salty water during the experiment and for zelmos who drank fresh water during the experiment. Please compare the two tables to see how different [similar] the patterns are.” 
 
-Once all three covariation tables had been presented, participants evaluated either claims about causal relationships or explanations (Table 2). Each claim was presented either at the type or token level. All claims were unqualified; that is, they stated a relationship between eating yonas and sore antennas without mentioning the kind of water the zelmo(s) in question drank. In addition, participants evaluated one counterfactual statement for each scenario; for example, after learning about a group of zelmos who were fed yonas, drank salty water, and developed sore antennas, participants rated their agreement with the statement that “had these zelmos eaten yonas but not drunk salty water, their antennas would still have become sore.” This statement was included to verify that participants differed across the moderated and non-moderated conditions in the role they attributed to the moderator. 
+> Once all three covariation tables had been presented, participants evaluated either claims about causal relationships or explanations (Table 2). Each claim was presented either at the type or token level. All claims were unqualified; that is, they stated a relationship between eating yonas and sore antennas without mentioning the kind of water the zelmo(s) in question drank. In addition, participants evaluated one counterfactual statement for each scenario; for example, after learning about a group of zelmos who were fed yonas, drank salty water, and developed sore antennas, participants rated their agreement with the statement that “had these zelmos eaten yonas but not drunk salty water, their antennas would still have become sore.” This statement was included to verify that participants differed across the moderated and non-moderated conditions in the role they attributed to the moderator. 
 
-At the end of the experiment, participants answered two multiple-choice comprehension check questions about each scenario they had read (e.g., “According to what you read, as a scientist on planet Zorg you were interested in evaluating the following hypothesis about zelmos: a. eating yona plants produces antenna soreness; b. eating drol mushrooms produces antenna soreness; c. eating mushrooms with stem bumps produces spotted antennas; d. antenna soreness makes zelmos eat yonas”). Participants who answered either question incorrectly were excluded from further analyses. 
+> At the end of the experiment, participants answered two multiple-choice comprehension check questions about each scenario they had read (e.g., “According to what you read, as a scientist on planet Zorg you were interested in evaluating the following hypothesis about zelmos: a. eating yona plants produces antenna soreness; b. eating drol mushrooms produces antenna soreness; c. eating mushrooms with stem bumps produces spotted antennas; d. antenna soreness makes zelmos eat yonas”). Participants who answered either question incorrectly were excluded from further analyses. 
 
-Across items, each participant saw two moderated cases and two non-moderated cases, presented in random order. Thus, Experiment 1 had a 2 moderator (moderated vs. nonmoderated relationship) x 2 judgment (causal vs. explanatory) x 2 target (type vs. token) mixed design, with moderator manipulated within-subjects. The dependent variables were agreement with causal or explanatory claims, and agreement with counterfactual claims, measured on a 1 (strongly disagree) to 7 (strongly agree) scale."
+> Across items, each participant saw two moderated cases and two non-moderated cases, presented in random order. Thus, Experiment 1 had a 2 moderator (moderated vs. nonmoderated relationship) x 2 judgment (causal vs. explanatory) x 2 target (type vs. token) mixed design, with moderator manipulated within-subjects. The dependent variables were agreement with causal or explanatory claims, and agreement with counterfactual claims, measured on a 1 (strongly disagree) to 7 (strongly agree) scale."
 
 ![Table 1 (above): Materials used in Experiments 1 (all four items) and 2 (zelmo and drol items only)](images/table1.png)
 
@@ -69,11 +73,9 @@ Across items, each participant saw two moderated cases and two non-moderated cas
 
 ![Table 2(above): Sample causal and explanation judgments in Experiment 1, as a function of judgment type (causal vs. explanatory) and target (token vs. type)](images/table2.png)
 
-Link to the Experiment: https://stanforduniversity.qualtrics.com/jfe/form/SV_bQ6I1kuS75Z5Jvo
-
 ### Analysis Plan
 
-The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANOVA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
+The key analysis of interest is the 2 (moderator vs. non-moderator) x 2 (causal vs. explanatory) x 2 (type vs. token) mixed ANOVA reported in section 2.2.1 of the paper, Experiment 1. It is a mixed ANOVA on the causal and explanatory ratings, where they found a main effect of moderator on participant's judgments, with no other main effects of interactions. The original reported statistics (and one I will be replicating) was F(1, 178) = 163.22, *p* < .001, $\eta^{2}_{p}$ = .478 for this original 2x2x2 ANOVA. A successful replication will replicate the main effect of moderator (ideally with an $\eta^{2}_{p}$ of at least .4, similar to their effect size of .478, but this will be examined upon analysis of the results), with no other main effects of interactions. This is the key analysis of interest as it the very first piece evidence of the phenomenon that adults consider causal stability in the strength of the causal claims.
 
 I will first import the data and relevant libraries. Then I will clean the data - omitting irrelevant columns to the analysis and excluding participants based on the exclusion criteria (in this case, participant's who answered at least one check question incorrectly). Then I will ready the data for analysis (e.g. changing from wide to long format, and other necessary steps that will be taken upon retrieval of the data), perform the ANOVA using the "aov" function in R, calculate effect sizes, and plot the data. I will then determine whether the result constitutes a successful replication.
 
@@ -81,19 +83,47 @@ I will first import the data and relevant libraries. Then I will clean the data 
 
 I hope to perform as faithful of a replication as possible - which includes utilizing the same design, stimuli, wording, and analysis pipeline. But one critical change to the experiment is that I will be adding two check questions at the very end of the experiment (after all of the content of the original experiment), for exploratory purposes to test participants' understanding of the covariation tables. I will analyze this in my exploratory analyses. Additionally, following best survey practices, I have added labels to all scales. Finally, I have changed the instructions of the experiment, the ending, method of feedback, and gender question, which constitute very minor changes from the original experiment.
 
+Text added after pre-registration: Below are images of the covariation table comprehension questions. In hindsight, I would have changed these questions to be made up causal variables (similar to the ones the original authors used), so that participants do not enter the question with priors about the nature of the causal relationship.
+
+![Fig. 2 (above): Covariation Check Question 1](images/cov1.png)
+
+![Fig. 3 (above): Covariation Check Question 2](images/cov2.png)
+
 If the researchers are unable to provide any of the materials, I may have to deviate from the exact stimuli/wording used in the original experiment. I may also have to compute the statistical tests in a different computing environment to what the researchers used in their study. Additionally, the population tested in the original experiment were participants on Amazon Mechanical Turk, whereas I will be testing participants on Prolific with high approval rates. I do not expect these differences to influence my ability to replicate the original results.
 
 I also plan on producing additional plots (e.g. pirate plots) to investigate the full distribution of the data across the various independent variables (i.e. not only the presence of moderator, but also the cause/explanatory variable, and type/token). 
 
-<!-- ### Methods Addendum (Post Data Collection) -->
+### Methods Addendum (Post Data Collection)
 
-<!-- You can comment this section out prior to final report with data collection. -->
+The final sample was n = 24, the same as the planned sample, but 11 participants were excluded from analysis for failing at least one check question. This leaves 13 for the confirmatory analysis. This was according to the pre-specified exclusion criteria (missing any of the 8 original comprehension questions), and this high exclusion rate is further explored in the confirmatory analysis. 
 
-<!-- #### Actual Sample -->
-<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan -->
+Next, let's look at demographics (for gender I used free response, which was not ideal for this kind of thing, so if you re-ran this experiment and ran this code I don't know that it would give you all of the demographic info cleanly):
 
-<!-- #### Differences from pre-data collection methods plan -->
-<!--   Any differences from what was described as the original plan, or “none”. -->
+```{r demographic}
+
+library(qualtRics) #to load in the survey
+
+data <- fetch_survey(surveyID = "SV_bQ6I1kuS75Z5Jvo", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE) 
+
+mage <- mean(as.numeric(data$Age), na.rm = TRUE) #calculate mean age
+
+mage
+
+sdage <- sd(as.numeric(data$Age), na.rm = TRUE) #calculate sd age
+
+sdage
+
+#count gender from free reponse
+
+nrow(subset(data, Gender == "male")) + nrow(subset(data, Gender == "Male")) + nrow(subset(data, Gender == "man")) + nrow(subset(data, Gender == "Man")) + nrow(subset(data, Gender == "M")) 
+
+nrow(subset(data, Gender == "female")) + nrow(subset(data, Gender == "Female")) + nrow(subset(data, Gender == "Woman")) + nrow(subset(data, Gender == "woman")) + nrow(subset(data, Gender == "F")) + nrow(subset(data, Gender == "cis woman"))
+
+nrow(subset(data, Gender == "Nonbinary")) + nrow(subset(data, Gender == "gender noncomforming")) + nrow(subset(data, Gender == "Gender Queer"))
+
+```
+
+The mean age for the sample was 32.375, standard deviation of age was 12.28, with 9 males, 12 females, 3 gender nonconforming/nonbinary/queer.
 
 ## Results
 
@@ -108,21 +138,19 @@ This data preparation process follows the analysis plan. We will first load in t
 
 ####Load Relevant Libraries and Functions
 
-library(tidyverse)
-library(plotrix) #and others if necessary
-library(qualtRics)
-library(ez)
-library(yarrr)
-library(DescTools)
+library(tidyverse) #for data cleaning and visualization
+library(plotrix) #for statistical tests
+library(yarrr) #for pirate plots
+library(DescTools) #for effect size calculation
 
 ####Import data
 
-data <- fetch_survey(surveyID = "SV_bQ6I1kuS75Z5Jvo", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE)
+data <- fetch_survey(surveyID = "SV_bQ6I1kuS75Z5Jvo", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE) #import survey
 
 #### Data exclusion / filtering
 
 data <- data %>% 
-  mutate(id = row_number()) %>% 
+  mutate(id = row_number()) %>% #create id row and bring it to the front
   select(id, everything()) %>% 
   filter(Consent == 2) %>% #consenting
   filter(Mch.z1 == 1,
@@ -168,6 +196,12 @@ data <- data %>%
                                      grepl("To.CF", question_type) ~ "token")) %>% 
   filter(!is.na(rating)) %>% 
   select(-c(moderator, task, question_type)) #get rid of last remaining unnecessary columns
+
+#turn them all into factors - forgot to add this in the prereg
+data$id <- factor(data$id)
+data$presence_of_moderator <- factor(data$presence_of_moderator)
+data$causalexplanatoryCF <- factor(data$causalexplanatoryCF)
+data$typetoken <- factor(data$typetoken)
 ```
 
 ### Confirmatory analysis
@@ -177,15 +211,17 @@ The first goal is to perform the main 2x2x2 mixed ANOVA, which is laid out in th
 First, we will get rid of the counterfactual data:
 
 ```{r main data cleaning}
-#perform ANOVA on causal/explanatory ratings
 
 dataconfirmatory <- data %>%
-  filter(grepl("counterfactual", causalexplanatoryCF) == FALSE)
+  filter(grepl("counterfactual", causalexplanatoryCF) == FALSE) #get rid of counterfactual data
 ```
 
 Now we perform the ANOVA:
 
 ```{r main anova}
+
+#perform ANOVA on causal/explanatory ratings
+
 aov1 <- aov(rating ~ (presence_of_moderator*causalexplanatoryCF*typetoken) + Error(id/(presence_of_moderator)) + (causalexplanatoryCF*typetoken), data = dataconfirmatory)
 
 summary(aov1)
@@ -195,11 +231,11 @@ and the effect size:
 
 ```{r main eta sq}
 
-etasq1 <- EtaSq(aov1, type = 1, anova = TRUE)
+etasq1 <- EtaSq(aov1, type = 1, anova = TRUE) #eta sqquared
 
 etasq1 #full table
 
-etasq1[1,2] #effect size for the presence of moderator
+etasq1[4,2] #effect size for the presence of moderator #beacuse of errors with the previous ANOVA, had to change numbers here
 
 ```
 
@@ -208,7 +244,7 @@ Now we plot it similarly to the paper, using a bar plot and only showing the eff
 ```{r confirmatory/main ANOVA, fig.width = 5}
 #plot using ggplot, using same method as paper just for comparison
 
-confirmatoryplot <- dataconfirmatory %>% 
+confirmatoryplot <- dataconfirmatory %>% #summarize data and take means
   group_by(presence_of_moderator) %>% 
   summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
 
@@ -220,7 +256,7 @@ ggplot(confirmatoryplot, aes(x = presence_of_moderator, y = Mean, fill = presenc
   xlab("Presence of Moderator")+
   scale_x_discrete(labels = c("Non-Moderated", "Moderated")) +
   scale_fill_manual(guide = NULL, name = "Presence of Moderator", labels = c("Non-moderated", "Moderated"), values = c("gray", "grey20")) +
-  theme(legend.position = "top")
+  theme(legend.position = "top") #create plot with specified colors and axes labels
 
 ```
 
@@ -237,7 +273,7 @@ For a more comprehensive look at the data, we can create pirate plots for each i
 pirateplot(formula = rating ~ presence_of_moderator,
            data = dataconfirmatory,
            theme = 3,
-           xlab = "Presence of Moderator",
+           xlab = "Presence of Moderator", #below parameters all aesthetic
            ylab = "Cause/Explanation Ratings",
            point.o = 1,
            gl.lty = 1,
@@ -285,8 +321,6 @@ Now we will perform the analysis performed in section 2.2.2 of the paper - not t
 First, get rid of the non-counterfactual data:
 
 ```{r counterfactual data cleaning}
-#perform ANOVA on counterfactual ratings
-
 datacounterfactual <- data %>%
   filter(grepl("counterfactual", causalexplanatoryCF))
 ```
@@ -294,6 +328,8 @@ datacounterfactual <- data %>%
 Now we perform the ANOVA:
 
 ```{r counterfactual anova}
+#perform ANOVA on counterfactual ratings
+
 aov2 <- aov(rating ~ (presence_of_moderator*typetoken) + Error(id/(presence_of_moderator)) + (typetoken), data = datacounterfactual)
 
 summary(aov2)
@@ -307,7 +343,7 @@ etasq2 <- EtaSq(aov2, type = 1, anova = TRUE)
 
 etasq2
 
-etasq2[1,2]
+etasq2[2,2] #had to change this due to error in previous ANOVA
 
 ```
 
@@ -322,7 +358,7 @@ ggplot(counterfactualplot, aes(x = presence_of_moderator, y = Mean, fill = prese
   geom_bar(position = "dodge", stat = "identity", width = .6) +
   geom_errorbar(aes(ymin = Mean - SEM, ymax = Mean + SEM), position = position_dodge(.9), width = .25) +
   theme_classic() + 
-  ylab("Cause/Explanation Ratings") +
+  ylab("Counterfactual Ratings") +
   xlab("Presence of Moderator")+
   scale_x_discrete(labels = c("Non-Moderated", "Moderated")) +
   scale_fill_manual(guide = NULL, name = "Presence of Moderator", labels = c("Non-moderated", "Moderated"), values = c("gray", "grey20")) +
@@ -337,7 +373,7 @@ pirateplot(formula = rating ~ presence_of_moderator,
            data = datacounterfactual,
            theme = 3,
            xlab = "Presence of Moderator",
-           ylab = "Cause/Explanation Ratings",
+           ylab = "Counterfactual Ratings",
            point.o = 1,
            gl.lty = 1,
            width.min = 1,
@@ -352,7 +388,7 @@ pirateplot(formula = rating ~ typetoken,
            data = datacounterfactual,
            theme = 3,
            xlab = "Presence of Moderator",
-           ylab = "Cause/Explanation Ratings",
+           ylab = "Counterfactual Ratings",
            point.o = 1,
            gl.lty = 1,
            width.min = 1,
@@ -363,20 +399,325 @@ pirateplot(formula = rating ~ typetoken,
 axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
 axis(1, at = c(1,2), labels = c("Token", "Type"), lwd = 0)
 ```
-### Exploratory analyses
 
-```{r}
-#in this section going to look for effect of check questions, and the ones that I implemented
+## Exploratory Analyses
+
+Given the stringent exclusion rate used by the authors in the original study, and the fact that the effect is strong even with 13 participants, we can look to see if including all participants makes any difference to the effect. We'll start with the data filtering code from above, but not excluding any participants on the basis of the check questions:
+
+```{r exploratory analysis 1}
+dataexp <- fetch_survey(surveyID = "SV_bQ6I1kuS75Z5Jvo", force_request = T, include_display_order = FALSE, label = FALSE, convert = FALSE)
+
+#### Data exclusion / filtering
+
+dataexp1 <- dataexp %>% 
+  mutate(id = row_number()) %>% 
+  select(id, everything()) %>% 
+  filter(Consent == 2) %>% #consenting
+  subset(select = -c(2:19)) %>% 
+  select(-starts_with(c("Mch", #getting rid of irrelevant columns, including check questions
+                        "Comm",
+                        "Age", 
+                        "Gender",
+                        "prolific-id",
+                        "PROLIFIC_PID",
+                        "tableorder",
+                        "cov"))) %>% 
+  pivot_longer(!c(id, task, moderator), names_to = "question_type", values_to = "rating") %>% #turn table into longer
+  mutate(presence_of_moderator = case_when(moderator == "drolyuyu" & grepl("d3", question_type) ~ "present", #create column indicating whether it was moderated or not
+         moderator == "drolyuyu" & grepl("d4", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y3", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g4", question_type) ~ "present",
+         TRUE ~ "absent")) %>% 
+  mutate("causalexplanatoryCF" = case_when(grepl("CaTy", question_type) ~ "causal", #change column names
+                                     grepl("ExTy", question_type) ~ "explanatory",
+                                     grepl("CaTo", question_type) ~ "causal",
+                                     grepl("ExTo", question_type) ~ "explanatory",
+                                     grepl("Ty.CF", question_type) ~ "counterfactual",
+                                     grepl("To.CF", question_type) ~ "counterfactual")) %>% 
+  mutate("typetoken" = case_when(grepl("CaTy", question_type) ~ "type", #change column names
+                                     grepl("ExTy", question_type) ~ "type",
+                                     grepl("CaTo", question_type) ~ "token",
+                                     grepl("ExTo", question_type) ~ "token",
+                                     grepl("Ty.CF", question_type) ~ "type",
+                                     grepl("To.CF", question_type) ~ "token")) %>% 
+  filter(!is.na(rating)) %>% 
+  select(-c(moderator, task, question_type)) #get rid of last remaining unnecessary columns
+
+#turn them all into factors 
+dataexp1$id <- factor(dataexp1$id)
+dataexp1$presence_of_moderator <- factor(dataexp1$presence_of_moderator)
+dataexp1$causalexplanatoryCF <- factor(dataexp1$causalexplanatoryCF)
+dataexp1$typetoken <- factor(dataexp1$typetoken)
+
+#perform ANOVA and calculate partial eta squared, like the confirmatory analysis:
+
+dataexp1test <- dataexp1 %>%
+  filter(causalexplanatoryCF != "counterfactual")
+
+aov3 <- aov(rating ~ (presence_of_moderator*causalexplanatoryCF*typetoken) + Error(id/(presence_of_moderator)) + (causalexplanatoryCF*typetoken), data = dataexp1)
+
+summary(aov3)
+
+etasq3 <- EtaSq(aov3, type = 1)
+
+etasq3 #full table
+
 ```
 
-Any follow-up analyses desired (not required).  
+Now let's plot the data using pirate plots. This time I will use participant means (rather than trial level data), as per suggestion after my final presentation:
+
+```{r exploratory analysis 1 plots}
+#we can plot the data and visually observe
+
+#first calculate participant means and summarise data
+
+dataexp1plot <- dataexp1test %>% 
+  group_by(id, presence_of_moderator) %>% 
+  summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
+
+pirateplot(formula = Mean ~ presence_of_moderator,
+           data = dataexp1plot,
+           theme = 3,
+           xlab = "Presence of Moderator",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Non-Moderated", "Moderated"), lwd = 0)
+
+```
+
+Because I plotted individual trials in the original confirmatory analysis and not participant means, we can also fix up the graph from earlier (doing only the one that shows the distribution between moderator conditions, as that one was the only one had that significant differences). This plot is in exploratory analysis because it was not part of the original confirmatory preregistration:
+
+```{r exploratory analysis 3, pirate plots that were not preregistered}
+
+dataconfirmatoryplotv2 <- dataconfirmatory %>% 
+  group_by(id, presence_of_moderator) %>% 
+  summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
+
+pirateplot(formula = Mean ~ presence_of_moderator,
+           data = dataconfirmatoryplotv2,
+           theme = 3,
+           xlab = "Presence of Moderator",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Non-Moderated", "Moderated"), lwd = 0)
+
+```
+
+Now we can investigate the effect of the covariation check questions. What happens to the effect if you exclude participants who failed the covariation questions (in tandem with the original exclusion criteria)?
+
+```{r exploratory analysis 4 covariation}
+#### Data exclusion / filtering
+
+dataexp2 <- dataexp %>% 
+  mutate(id = row_number()) %>% 
+  select(id, everything()) %>% 
+  filter(Consent == 2) %>% #consenting
+  filter(Mch.z1 == 1,
+         Mch.z2 == 1,
+         Mch.d1 == 1,
+         Mch.d2 == 1,
+         Mch.g1 == 1,
+         Mch.g2 == 1,
+         Mch.y1 == 1,
+         Mch.y2 == 1) %>% #check questions
+  filter(cov.1 == 1,
+         cov.2 == 1) %>% #covariation comprehension questions
+  subset(select = -c(2:19)) %>% 
+  select(-starts_with(c("Mch", #getting rid of irrelevant columns, including check questions
+                        "Comm",
+                        "Age", 
+                        "Gender",
+                        "prolific-id",
+                        "PROLIFIC_PID",
+                        "tableorder",
+                        "cov"))) %>% 
+  pivot_longer(!c(id, task, moderator), names_to = "question_type", values_to = "rating") %>% #turn table into longer
+  mutate(presence_of_moderator = case_when(moderator == "drolyuyu" & grepl("d3", question_type) ~ "present", #create column indicating whether it was moderated or not
+         moderator == "drolyuyu" & grepl("d4", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y3", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g4", question_type) ~ "present",
+         TRUE ~ "absent")) %>% 
+  mutate("causalexplanatoryCF" = case_when(grepl("CaTy", question_type) ~ "causal", #change column names
+                                     grepl("ExTy", question_type) ~ "explanatory",
+                                     grepl("CaTo", question_type) ~ "causal",
+                                     grepl("ExTo", question_type) ~ "explanatory",
+                                     grepl("Ty.CF", question_type) ~ "counterfactual",
+                                     grepl("To.CF", question_type) ~ "counterfactual")) %>% 
+  mutate("typetoken" = case_when(grepl("CaTy", question_type) ~ "type", #change column names
+                                     grepl("ExTy", question_type) ~ "type",
+                                     grepl("CaTo", question_type) ~ "token",
+                                     grepl("ExTo", question_type) ~ "token",
+                                     grepl("Ty.CF", question_type) ~ "type",
+                                     grepl("To.CF", question_type) ~ "token")) %>% 
+  filter(!is.na(rating)) %>% 
+  select(-c(moderator, task, question_type)) #get rid of last remaining unnecessary columns
+
+#turn them all into factors - forgot to add this in the prereg
+dataexp2$id <- factor(dataexp2$id)
+dataexp2$presence_of_moderator <- factor(dataexp2$presence_of_moderator)
+dataexp2$causalexplanatoryCF <- factor(dataexp2$causalexplanatoryCF)
+dataexp2$typetoken <- factor(dataexp2$typetoken)
+
+#now conduct statistical tests:
+
+dataexp2test <- dataexp2 %>%
+  filter(causalexplanatoryCF != "counterfactual")
+
+aov4 <- aov(rating ~ (presence_of_moderator*causalexplanatoryCF*typetoken) + Error(id/(presence_of_moderator)) + (causalexplanatoryCF*typetoken), data = dataexp2test)
+
+summary(aov4)
+
+etasq4 <- EtaSq(aov4, type = 1)
+
+etasq4 #full table
+
+```
+
+And now we can plot it:
+
+```{r covariation plots}
+dataexp2plot <- dataexp2test %>% 
+  group_by(id, presence_of_moderator) %>% 
+  summarize(Mean = mean(as.numeric(rating), na.rm = TRUE), SEM = std.error(rating, na.rm = TRUE))
+
+pirateplot(formula = Mean ~ presence_of_moderator,
+           data = dataexp2plot,
+           theme = 3,
+           xlab = "Presence of Moderator",
+           ylab = "Cause/Explanation Ratings",
+           point.o = 1,
+           gl.lty = 1,
+           width.min = 1,
+           point.pch = 16,
+           inf.f.o = .4,
+           yaxt = "n",
+           xaxt = "n")
+axis(2, at = seq(from = 0, to = 7, by = 1), las = 2)
+axis(1, at = c(1,2), labels = c("Non-Moderated", "Moderated"), lwd = 0)
+```
+
+What about if we used only the covariation table as an exclusion criteria?
+
+```{r exploratory analysis 5 covariation}
+#### Data exclusion / filtering
+
+dataexp3 <- dataexp %>% 
+  mutate(id = row_number()) %>% 
+  select(id, everything()) %>% 
+  filter(Consent == 2) %>% #consenting
+  filter(cov.1 == 1,
+         cov.2 == 1) %>% #covariation comprehension questions
+  subset(select = -c(2:19)) %>% 
+  select(-starts_with(c("Mch", #getting rid of irrelevant columns, including check questions
+                        "Comm",
+                        "Age", 
+                        "Gender",
+                        "prolific-id",
+                        "PROLIFIC_PID",
+                        "tableorder",
+                        "cov"))) %>% 
+  pivot_longer(!c(id, task, moderator), names_to = "question_type", values_to = "rating") %>% #turn table into longer
+  mutate(presence_of_moderator = case_when(moderator == "drolyuyu" & grepl("d3", question_type) ~ "present", #create column indicating whether it was moderated or not
+         moderator == "drolyuyu" & grepl("d4", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y3", question_type) ~ "present",
+         moderator == "drolyuyu" & grepl("y4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("Z4", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g3", question_type) ~ "present",
+         moderator == "zelmogrimond" & grepl("g4", question_type) ~ "present",
+         TRUE ~ "absent")) %>% 
+  mutate("causalexplanatoryCF" = case_when(grepl("CaTy", question_type) ~ "causal", #change column names
+                                     grepl("ExTy", question_type) ~ "explanatory",
+                                     grepl("CaTo", question_type) ~ "causal",
+                                     grepl("ExTo", question_type) ~ "explanatory",
+                                     grepl("Ty.CF", question_type) ~ "counterfactual",
+                                     grepl("To.CF", question_type) ~ "counterfactual")) %>% 
+  mutate("typetoken" = case_when(grepl("CaTy", question_type) ~ "type", #change column names
+                                     grepl("ExTy", question_type) ~ "type",
+                                     grepl("CaTo", question_type) ~ "token",
+                                     grepl("ExTo", question_type) ~ "token",
+                                     grepl("Ty.CF", question_type) ~ "type",
+                                     grepl("To.CF", question_type) ~ "token")) %>% 
+  filter(!is.na(rating)) %>% 
+  select(-c(moderator, task, question_type)) #get rid of last remaining unnecessary columns
+
+#turn them all into factors - forgot to add this in the prereg
+dataexp3$id <- factor(dataexp3$id)
+dataexp3$presence_of_moderator <- factor(dataexp3$presence_of_moderator)
+dataexp3$causalexplanatoryCF <- factor(dataexp3$causalexplanatoryCF)
+dataexp3$typetoken <- factor(dataexp3$typetoken)
+
+#now conduct statistical tests:
+
+dataexp3test <- dataexp3 %>%
+  filter(causalexplanatoryCF != "counterfactual")
+
+aov5 <- aov(rating ~ (presence_of_moderator*causalexplanatoryCF*typetoken) + Error(id/(presence_of_moderator)) + (causalexplanatoryCF*typetoken), data = dataexp3test)
+
+summary(aov5)
+
+etasq5 <- EtaSq(aov5, type = 1)
+
+etasq5 #full table
+```
+
 
 ## Discussion
 
 ### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+I successfully replicated the effect from the original paper (F(1,9) = 24.167, *p* = .0008, $\eta^{2}_{p}$ = .728). There were no other main effects or interactions. The effect size in the original paper was .478, so the effect size that I found was significantly higher than that (this is further discussed in the commentary below). 
 
-### Commentary
+I also replicated the effect (of the presence of moderator) found with the counterfactual DV as well (F(1, 11) = 58.461, *p* = .00001, $\eta^{2}_{p}$ = .841). 
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+Overall, the replication was successful. Further commentary on the exploratory analyses down below.
+
+## Commentary
+
+### Exploratory Analyses and Concluding Thoughts
+
+Given the high exclusion rate of participants in my study, I decided to see if including participants who missed the comprehension questions would have any effect on the results. In my confirmatory analyses, I had to exclude 11 of my 24 total participants ran, which is an exclusion rate of roughly 45%. In the original paper, they excluded 49 out of 231, which is roughly 21% exclusion rate. Granted, the criteria for exclusion in the paper is slightly ambiguous - see below:
+
+> At the end of the experiment, participants answered two multiple-choice comprehension
+check questions about each scenario they had read (e.g., “According to what you
+read, as a scientist on planet Zorg you were interested in evaluating the following hypothesis
+about zelmos: a. eating yona plants produces antenna soreness; b. eating drol mushrooms
+produces antenna soreness; c. eating mushrooms with stem bumps produces
+spotted antennas; d. antenna soreness makes zelmos eat yonas”). Participants who
+answered either question incorrectly were excluded from further analyses.
+
+Ultimately, the ambiguity lies in whether or not the original authors tossed whole participant data, or only that of a particular scenario/trial. In either case, the exploratory analyses I ran found that the effect does not go away even if you include every single participant (F(1, 20 ) = 40.12, *p* = .0000035, $\eta^{2}_{p}$ = .667). My sense was that the interpretation of the exclusion criteria that I had (excluding whole participant data based on one incorrect comprehension question out of eight) was really stringent. It is possible that the exclusion criteria is actually less stringent (which would align with the the mismatch in our exclusion rates). 
+
+I also checked whether the covariation comprehension questions I would change the effect. In fact, 3 of the participants who were included in the analysis missed at least one of these covariation questions, and 6 of the participants who were excluded answered them both correctly. In any case, I would not be changing whether or not the effect was significant, but looking at the size of the effect. I found the effect when the covariation tables were the only exclusion criteria (F(1, 9) = 37.73, *p* = .00004, $\eta^{2}_{p}$ = .758) and when it was used in tandem with the original exclusion criteria (F(1, 9) = 55.68, *p* = .000299, $\eta^{2}_{p}$ = .902). I find that the effect is highest in the case where both exclusion criteria were used. While I would not draw any strong conclusions from this at all - it raises the question of: What makes a good comprehension question?
+
+From the perspective of the researcher, building adequate and succinct comprehension questions are good for two reasons: to reduce cost, and to avoid adversarial relationships with their workers. If researchers can find the line between comprehension questions that accurately exclude participants who were not paying attention AND are not too stringent in doing so, then they can reduce cost in data collection (by not having to exclude as many participants). In the case of this experiment, missing any of the eight comprehension questions might be a strict exclusion criteria. And while this question differs by domain and the effect you are trying to find, it is an important question for researchers on crowd-sourcing sites to think about.
+
+Ultimately, I replicated the targeted effect of my replication even with 13 participants, even including participants who missed various comprehension questions. This is an example of a strong effect - a case where if you *don't replicate*, there might be an issue with your implementation rather than the effect itself. This report does not even look at the free response data that we collected nor as well as the effect of table order, given that these were not mentioned in the paper and not the key analysis of interest. This data may be insightful. Future work may build upon this and further investigate the theoretical question of what aspects influence people's endorsements of causal relationships, as well as the methodological question of what make good comprehension questions in crowd-sourced experiments. 
